@@ -1,0 +1,90 @@
+
+<div class="container">
+
+  <div class="row">
+      <div class="col s12">
+          <div class="card-panel">
+              <div class="row text-center">
+
+                  <div class="col s10">
+                      <h3>Salas de reunião</h3>
+
+                  </div>
+                  <div class="col s2">
+                      <div class="btn-group">
+                          <div class="btn btn-primary" (click)="open()">
+                              Novo
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="table-responsive">
+                  <table class="table table-bordered">
+                      <thead>
+                          <tr>
+                              <th>Descrição</th>
+                              <th>Excluir</th>
+                          </tr>
+                      </thead>
+
+                      <tbody>
+                          <tr *ngFor="let sala of salas">
+                              <td>
+                                  {{sala.descricao }}
+                              </td>
+                              <td>
+                                  <button class="btn btn-danger"
+                                      (click)="deleteSala(sala)">
+                                      Excluir
+                                  </button>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <br /><br /><br />
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+      <h5 class="modal-title">Adicionar nova Sala</h5>
+      <button type="button" class="close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+        <div *ngIf="isError" class="alert alert-danger" role="alert">
+                <div *ngFor="let err of erros">
+                        {{err.message}}
+                </div>
+                    
+                 </div>
+
+      <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th>Descrição</th>
+              </tr>
+
+          </thead>
+
+          <tbody>
+              <tr>
+                  <td>
+                      <input type="text" class="form-control" [(ngModel)]="salaNew.descricao" />
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="addSala(salaNew)">
+          Adicionar
+      </button>
+  </div>
+</ng-template>

@@ -1,0 +1,50 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center text-white mb-4">Acesso</h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <!-- form card login -->
+          <div class="card rounded-0">
+            <div class="card-header">
+              <h3 class="mb-0">Acesso </h3>
+            </div>
+            <div class="card-body">
+              <div *ngIf="isLoginError" class="red-text center error-message">
+                <i class="material-icons">error</i> Usuário ou senha incorretos
+              </div>
+              <form #loginForm="ngForm" class="form" (ngSubmit)="OnSubmit(Email.value,Password.value)">
+                <div class="form-group">
+                  <label for="uname1">Email</label>
+                  <input type="text" class="form-control form-control-lg rounded-0" #Email ngModel name="Email"
+                    placeholder="Email" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Senha</label>
+                  <input type="password" class="form-control form-control-lg rounded-0" #Password ngModel
+                    name="Password" placeholder="Senha" required>
+                </div>
+                <button [disabled]="!loginForm.valid" class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+
+                
+              </form>
+              <br><br>
+              <a  [routerLink]="['/signup']" class="btn btn-lg btn-default btn-block" >Cadastro</a>
+            </div>
+            <!--/card-block-->
+          </div>
+          <!-- /form card login -->
+
+        </div>
+
+
+      </div>
+      <!--/row-->
+
+    </div>
+    <!--/col-->
+  </div>
+  <!--/row-->
+</div>
+<!--/container-->

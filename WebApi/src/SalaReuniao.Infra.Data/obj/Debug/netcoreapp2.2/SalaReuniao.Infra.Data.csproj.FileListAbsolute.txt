@@ -1,0 +1,9 @@
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\bin\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.deps.json
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\bin\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.dll
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\obj\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.csprojAssemblyReference.cache
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\obj\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.csproj.CoreCompileInputs.cache
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\obj\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.AssemblyInfoInputs.cache
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\obj\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.AssemblyInfo.cs
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\bin\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.pdb
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\obj\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.dll
+D:\Projetos\Estudos\SalaReuniao\src\SalaReuniao.Infra.Data\obj\Debug\netcoreapp2.2\SalaReuniao.Infra.Data.pdb

@@ -1,0 +1,131 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel">
+                    <div class="alert alert-info" role="alert">
+                            <h4>Sala: {{sala.descricao}}</h4>
+                          </div>
+
+                <div class="row text-center">
+                    <div class="col s6">
+                        <div class="btn-group">
+                            <div class="btn btn-primary" (click)="previousDate()">
+                                Anterior
+                            </div>
+                            <div class="btn btn-outline-secondary" (click)="nowDate()">
+                                Hoje
+                            </div>
+                            <div class="btn btn-primary" (click)="nextDate()">
+                                Próximo
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <h3>{{viewDate | date: 'shortDate' : '' :locale}}</h3>
+
+                    </div>
+                    <div class="col s2">
+                        <div class="btn-group">
+                            <div class="btn btn-primary" (click)="open()">
+                                Novo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Motivo</th>
+                                <th>Hora de Inicio</th>
+                                <th>Hora de fim</th>
+                                <th>Excluir</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let agendamento of agendamentos">
+                                <td>
+                                    {{agendamento.usuario.nome }}
+                                </td>
+                                <td>
+                                    {{agendamento.descricao}}
+                                </td>
+                                <td>
+                                    {{agendamento.horaInicio | date: 'HH:MM' : '' :locale}}
+                                </td>
+                                <td>
+                                    {{agendamento.horaFinal | date: 'HH:MM' : '' :locale}}
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger"
+                                        [disabled]="agendamento.usuarioId != usuario.usuarioId"
+                                        (click)="deleteAgendamento(agendamento)">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br /><br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #modalContent let-close="close">
+    <div class="modal-header">
+        <h5 class="modal-title">Adicionar agendamento</h5>
+        <button type="button" class="close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        
+            <div *ngIf="isError" class="alert alert-danger" role="alert">
+                <div *ngFor="let err of erros">
+                        {{err.message}}
+                </div>
+                    
+                 </div>
+           
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Motivo</th>
+                    <th>Hora de Inicio</th>
+                    <th>Hora de fim</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" readonly [(ngModel)]="agendamentoNew.usuario.nome" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="agendamentoNew.descricao" />
+                    </td>
+                    <td>
+                        <input class="form-control" type="time" [(ngModel)]="agendamentoNew.horaInicio"
+                            placeholder="Selecione a data e hora" />
+                    </td>
+                    <td>
+                        <input class="form-control" type="time" [(ngModel)]="agendamentoNew.horaFinal"
+                            placeholder="Selecione a data e hora" />
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="addAgendamento(agendamentoNew)">
+            OK
+        </button>
+    </div>
+</ng-template>

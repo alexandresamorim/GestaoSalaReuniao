@@ -1,0 +1,13 @@
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            Salas
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let sala of salas" [routerLink]="['/salaDetail',sala.salaId]">
+                {{sala.descricao}}
+            </li>
+        </ul>
+    </div>
+</div>
