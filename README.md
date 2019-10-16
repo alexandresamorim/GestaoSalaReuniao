@@ -9,6 +9,9 @@ Vá para a pasta do projeto e instale dependências:
 ```bash
 npm install
 ```
+```bash
+ng serve
+```
 2. Inicie o servidor de desenvolvimento e abra `localhost: 4200` no seu navegador:
 
 # Como usar BackEnd:
